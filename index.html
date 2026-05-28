@@ -175,33 +175,91 @@
             </p>
 
         </section>
+        <section id="tecnologias">
+
+    <h2>2. Tecnologías y Protocolos Utilizados</h2>
+
+    <table>
+
+        <tr>
+            <th>Componente</th>
+            <th>Tecnología</th>
+            <th>Descripción</th>
+        </tr>
+
+        <tr>
+            <td>Enrutamiento</td>
+            <td>OSPF</td>
+            <td>
+                Se implementó OSPF entre el router ISR4331 y el switch central Catalyst 9200L.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Switch Central</td>
+            <td>Cisco Catalyst 9200L</td>
+            <td>
+                El switch soporta OSPF en su imagen base.
+            </td>
+        </tr>
+
+        <tr>
+            <td>BGP</td>
+            <td>No implementado</td>
+            <td>
+                No fue posible implementar BGP debido a limitaciones de compatibilidad
+                en el switch central.
+            </td>
+        </tr>
+
+        <tr>
+            <td>Acceso inalámbrico</td>
+            <td>WiFi Bridge</td>
+            <td>
+                Se utilizó un Access Point para conectar clientes remotos.
+            </td>
+        </tr>
+
+    </table>
+
+</section>
 
         <!-- TOPOLOGÍA -->
-        <section id="topologia">
+       <section id="topologia">
 
-            <h2>2. Topología de Red</h2>
+    <h2>3. Topologías de Red</h2>
 
-            <p>
-                La topología implementada se compone de:
-            </p>
+    <h3>Topología General de mikro-net</h3>
 
-            <ul style="margin-left: 30px; margin-top: 15px;">
-                <li>Router principal</li>
-                <li>Switch principal</li>
-                <li>Bridge inalámbrico</li>
-                <li>Router remoto</li>
-                <li>Hosts clientes</li>
-                <li>Conexión a mikro-net</li>
-            </ul>
+    <p>
+        La siguiente imagen muestra la integración de nuestra organización
+        dentro de la infraestructura general de mikro-net.
+    </p>
 
-            <div class="topologia">
+    <div class="topologia">
 
-                <!-- CAMBIAR POR SU IMAGEN -->
-                <img src=""C:\Users\yrost\OneDrive\Pictures\Screenshots\Screenshot 2026-05-27 163258.png"" alt="Topología de red">
+        <img src="Screenshot 2026-05-27 163258.png"
+             alt="Topología general mikro-net">
 
-            </div>
+    </div>
 
-        </section>
+    <br><br>
+
+    <h3>Topología Específica - Enlace Remoto</h3>
+
+    <p>
+        La siguiente topología muestra la estructura interna de la organización
+        Enlace Remoto.
+    </p>
+
+    <div class="topologia">
+
+        <img src="Screenshot 2026-05-27 164230.png"
+             alt="Topología específica">
+
+    </div>
+
+</section>
 
         <!-- DIRECCIONAMIENTO -->
         <section id="direccionamiento">
@@ -246,6 +304,27 @@
                 </tr>
 
             </table>
+            <section id="switchports">
+
+    <h2>5. Configuración de Puertos - SW-Remoto</h2>
+
+    <p>
+        Los puertos utilizados en el switch remoto corresponden
+        al rango:
+    </p>
+
+    <pre>
+<code>
+GigabitEthernet1/0/2 - GigabitEthernet1/0/6
+</code>
+    </pre>
+
+    <p>
+        Estos puertos fueron destinados para dispositivos internos
+        y conectividad de la infraestructura local.
+    </p>
+
+</section>
 
         </section>
 
@@ -285,6 +364,20 @@ add name=bgp-mikronet remote.address=192.168.1.1
             </pre>
 
         </section>
+        <h3>Configuración OSPF</h3>
+
+<pre>
+<code>
+router ospf 1
+ router-id 1.1.1.1
+ network 10.10.1.0 0.0.0.255 area 0
+</code>
+</pre>
+
+<p>
+    El protocolo OSPF fue implementado tanto en el router ISR4331
+    como en el switch central Catalyst 9200L.
+</p>
 
         <!-- FIREWALL -->
         <section id="firewall">
