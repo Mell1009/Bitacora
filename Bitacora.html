@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bitácora - Enlace Remoto</title>
+
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background-color: #f4f6f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header{
+            background-color: #0d47a1;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+
+        header h1{
+            margin-bottom: 10px;
+        }
+
+        nav{
+            background-color: #1565c0;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a{
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover{
+            text-decoration: underline;
+        }
+
+        .container{
+            width: 90%;
+            max-width: 1200px;
+            margin: 30px auto;
+        }
+
+        section{
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+        }
+
+        section h2{
+            color: #0d47a1;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #0d47a1;
+            padding-bottom: 10px;
+        }
+
+        table{
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table th, table td{
+            border: 1px solid #ccc;
+            padding: 12px;
+            text-align: center;
+        }
+
+        table th{
+            background-color: #1976d2;
+            color: white;
+        }
+
+        pre{
+            background-color: #1e1e1e;
+            color: #00ff88;
+            padding: 15px;
+            overflow-x: auto;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        code{
+            font-family: Consolas, monospace;
+        }
+
+        .topologia{
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .topologia img{
+            width: 100%;
+            max-width: 800px;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+        }
+
+        footer{
+            background-color: #0d47a1;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        .badge{
+            display: inline-block;
+            background-color: #1976d2;
+            color: white;
+            padding: 5px 12px;
+            border-radius: 20px;
+            margin-top: 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>Bitácora de Implementación</h1>
+        <h2>Organización: Enlace Remoto</h2>
+        <p>Proyecto mikro-net</p>
+
+        <div class="badge">
+            Redes y Comunicaciones de Datos
+        </div>
+    </header>
+
+    <nav>
+        <a href="#introduccion">Introducción</a>
+        <a href="#topologia">Topología</a>
+        <a href="#direccionamiento">Direccionamiento</a>
+        <a href="#configuracion">Configuración</a>
+        <a href="#firewall">Firewall</a>
+        <a href="#dns">DNS</a>
+        <a href="#servidor">Servidor Web</a>
+        <a href="#evidencias">Evidencias</a>
+    </nav>
+
+    <div class="container">
+
+        <!-- INTRODUCCIÓN -->
+        <section id="introduccion">
+
+            <h2>1. Introducción</h2>
+
+            <p>
+                La organización <strong>Enlace Remoto</strong> implementa una red
+                distribuida con dos ubicaciones físicas conectadas mediante
+                un puente inalámbrico (WiFi Bridge).
+            </p>
+
+            <br>
+
+            <p>
+                El objetivo principal es permitir el acceso a los servicios
+                internos y externos de mikro-net utilizando protocolos de
+                enrutamiento dinámico y mecanismos de seguridad.
+            </p>
+
+        </section>
+
+        <!-- TOPOLOGÍA -->
+        <section id="topologia">
+
+            <h2>2. Topología de Red</h2>
+
+            <p>
+                La topología implementada se compone de:
+            </p>
+
+            <ul style="margin-left: 30px; margin-top: 15px;">
+                <li>Router principal</li>
+                <li>Switch principal</li>
+                <li>Bridge inalámbrico</li>
+                <li>Router remoto</li>
+                <li>Hosts clientes</li>
+                <li>Conexión a mikro-net</li>
+            </ul>
+
+            <div class="topologia">
+
+                <!-- CAMBIAR POR SU IMAGEN -->
+                <img src=""C:\Users\yrost\OneDrive\Pictures\Screenshots\Screenshot 2026-05-27 163258.png"" alt="Topología de red">
+
+            </div>
+
+        </section>
+
+        <!-- DIRECCIONAMIENTO -->
+        <section id="direccionamiento">
+
+            <h2>3. Direccionamiento IP</h2>
+
+            <table>
+
+                <tr>
+                    <th>Dispositivo</th>
+                    <th>Interfaz</th>
+                    <th>Dirección IP</th>
+                    <th>VLAN</th>
+                </tr>
+
+                <tr>
+                    <td>Router Principal</td>
+                    <td>ether1</td>
+                    <td>10.10.1.1/24</td>
+                    <td>20</td>
+                </tr>
+
+                <tr>
+                    <td>Bridge WiFi</td>
+                    <td>wlan1</td>
+                    <td>10.10.1.2</td>
+                    <td>20</td>
+                </tr>
+
+                <tr>
+                    <td>Router Remoto</td>
+                    <td>ether1</td>
+                    <td>10.10.2.1/24</td>
+                    <td>30</td>
+                </tr>
+
+                <tr>
+                    <td>Cliente 1</td>
+                    <td>eth0</td>
+                    <td>DHCP</td>
+                    <td>30</td>
+                </tr>
+
+            </table>
+
+        </section>
+
+        <!-- CONFIGURACIÓN -->
+        <section id="configuracion">
+
+            <h2>4. Configuración de Red</h2>
+
+            <h3>Configuración IP Router Principal</h3>
+
+            <pre>
+<code>
+/ip address
+add address=10.10.1.1/24 interface=ether1
+</code>
+            </pre>
+
+            <h3>Configuración Bridge Inalámbrico</h3>
+
+            <pre>
+<code>
+/interface wireless
+set wlan1 mode=bridge ssid=EnlaceRemoto
+</code>
+            </pre>
+
+            <h3>Configuración OSPF/BGP</h3>
+
+            <pre>
+<code>
+/routing ospf instance
+add name=backbone
+
+/routing bgp connection
+add name=bgp-mikronet remote.address=192.168.1.1
+</code>
+            </pre>
+
+        </section>
+
+        <!-- FIREWALL -->
+        <section id="firewall">
+
+            <h2>5. Configuración Firewall</h2>
+
+            <p>
+                Se implementaron reglas restrictivas para permitir únicamente
+                el tráfico necesario.
+            </p>
+
+            <pre>
+<code>
+/ip firewall filter
+add chain=input protocol=icmp action=accept
+
+/ip firewall filter
+add chain=input connection-state=established action=accept
+
+/ip firewall filter
+add chain=input action=drop
+</code>
+            </pre>
+
+        </section>
+
+        <!-- DNS -->
+        <section id="dns">
+
+            <h2>6. Configuración DNS</h2>
+
+            <p>
+                Se configuró resolución de nombres para todos los dispositivos
+                internos y servicios.
+            </p>
+
+            <pre>
+<code>
+/ip dns
+set servers=8.8.8.8 allow-remote-requests=yes
+</code>
+            </pre>
+
+        </section>
+
+        <!-- SERVIDOR WEB -->
+        <section id="servidor">
+
+            <h2>7. Servidor Web</h2>
+
+            <p>
+                El servidor web fue configurado utilizando Apache/Nginx
+                para publicar:
+            </p>
+
+            <ul style="margin-left: 30px; margin-top: 15px;">
+                <li>Bitácora del proyecto</li>
+                <li>Esquema de red</li>
+                <li>Evidencias de funcionamiento</li>
+            </ul>
+
+            <h3>Estructura del servidor</h3>
+
+            <pre>
+<code>
+/var/www/html
+│
+├── index.html
+├── bitacora.html
+├── esquema.html
+└── imagenes/
+    └── topologia.png
+</code>
+            </pre>
+
+        </section>
+
+        <!-- EVIDENCIAS -->
+        <section id="evidencias">
+
+            <h2>8. Evidencias</h2>
+
+            <p>
+                A continuación se colocarán las capturas y pruebas de:
+            </p>
+
+            <ul style="margin-left: 30px; margin-top: 15px;">
+                <li>Ping entre sedes</li>
+                <li>Conectividad entre VLANs</li>
+                <li>Acceso a servicios web</li>
+                <li>Capturas Wireshark</li>
+                <li>Resolución DNS</li>
+                <li>Pruebas BGP/OSPF</li>
+            </ul>
+
+        </section>
+
+    </div>
+
+    <footer>
+
+        <p>
+            Universidad de Costa Rica - Redes y Comunicaciones de Datos
+        </p>
+
+        <p>
+            Proyecto mikro-net | Organización Enlace Remoto
+        </p>
+
+    </footer>
+
+</body>
+</html>
