@@ -68,10 +68,17 @@
             padding-bottom: 10px;
         }
 
+        section h3{
+            margin-top: 20px;
+            margin-bottom: 10px;
+            color: #1565c0;
+        }
+
         table{
             width: 100%;
             border-collapse: collapse;
             margin-top: 15px;
+            margin-bottom: 15px;
         }
 
         table th, table td{
@@ -85,6 +92,12 @@
             color: white;
         }
 
+        ul{
+            margin-left: 30px; 
+            margin-top: 15px;
+            margin-bottom: 15px;
+        }
+
         pre{
             background-color: #1e1e1e;
             color: #00ff88;
@@ -92,6 +105,7 @@
             overflow-x: auto;
             border-radius: 8px;
             margin-top: 15px;
+            margin-bottom: 15px;
         }
 
         code{
@@ -101,6 +115,7 @@
         .topologia{
             text-align: center;
             margin-top: 20px;
+            margin-bottom: 20px;
         }
 
         .topologia img{
@@ -136,335 +151,240 @@
         <h1>Bitácora de Implementación</h1>
         <h2>Organización: Enlace Remoto</h2>
         <p>Proyecto mikro-net</p>
-
-        <div class="badge">
-            Redes y Comunicaciones de Datos
-        </div>
+        <div class="badge">Redes y Comunicaciones de Datos</div>
     </header>
 
     <nav>
         <a href="#introduccion">Introducción</a>
+        <a href="#tecnologias">Tecnologías</a>
+        <a href="#integrantes">Integrantes</a>
         <a href="#topologia">Topología</a>
         <a href="#direccionamiento">Direccionamiento</a>
+        <a href="#switchports">Puertos SW</a>
         <a href="#configuracion">Configuración</a>
         <a href="#firewall">Firewall</a>
         <a href="#dns">DNS</a>
         <a href="#servidor">Servidor Web</a>
+        <a href="#conclusiones">Conclusiones</a>
         <a href="#evidencias">Evidencias</a>
     </nav>
 
     <div class="container">
 
-        <!-- INTRODUCCIÓN -->
         <section id="introduccion">
-
             <h2>1. Introducción</h2>
-
             <p>
                 La organización <strong>Enlace Remoto</strong> implementa una red
                 distribuida con dos ubicaciones físicas conectadas mediante
                 un puente inalámbrico (WiFi Bridge).
             </p>
-
-            <br>
-
-            <p>
+            <p style="margin-top: 15px;">
                 El objetivo principal es permitir el acceso a los servicios
                 internos y externos de mikro-net utilizando protocolos de
                 enrutamiento dinámico y mecanismos de seguridad.
             </p>
-
         </section>
+
         <section id="tecnologias">
-
-    <h2>2. Tecnologías y Protocolos Utilizados</h2>
-
-    <table>
-
-        <tr>
-            <th>Componente</th>
-            <th>Tecnología</th>
-            <th>Descripción</th>
-        </tr>
-
-        <tr>
-            <td>Enrutamiento</td>
-            <td>OSPF</td>
-            <td>
-                Se implementó OSPF entre el router ISR4331 y el switch central Catalyst 9200L.
-            </td>
-        </tr>
-
-        <tr>
-            <td>Switch Central</td>
-            <td>Cisco Catalyst 9200L</td>
-            <td>
-                El switch soporta OSPF en su imagen base.
-            </td>
-        </tr>
-
-        <tr>
-            <td>BGP</td>
-            <td>No implementado</td>
-            <td>
-                No fue posible implementar BGP debido a limitaciones de compatibilidad
-                en el switch central.
-            </td>
-        </tr>
-
-        <tr>
-            <td>Acceso inalámbrico</td>
-            <td>WiFi Bridge</td>
-            <td>
-                Se utilizó un Access Point para conectar clientes remotos.
-            </td>
-        </tr>
-
-    </table>
-
-</section>
-
-        <!-- TOPOLOGÍA -->
-       <section id="topologia">
-
-    <h2>3. Topologías de Red</h2>
-
-    <h3>Topología General de mikro-net</h3>
-
-    <p>
-        La siguiente imagen muestra la integración de nuestra organización
-        dentro de la infraestructura general de mikro-net.
-    </p>
-
-    <div class="topologia">
-
-        <img src="Screenshot 2026-05-27 163258.png"
-             alt="Topología general mikro-net">
-
-    </div>
-
-    <br><br>
-
-    <h3>Topología Específica - Enlace Remoto</h3>
-
-    <p>
-        La siguiente topología muestra la estructura interna de la organización
-        Enlace Remoto.
-    </p>
-
-    <div class="topologia">
-
-        <img src="Screenshot 2026-05-27 164230.png"
-             alt="Topología específica">
-
-    </div>
-
-</section>
-
-        <!-- DIRECCIONAMIENTO -->
-        <section id="direccionamiento">
-
-            <h2>3. Direccionamiento IP</h2>
-
+            <h2>2. Tecnologías y Protocolos Utilizados</h2>
             <table>
+                <tr>
+                    <th>Componente</th>
+                    <th>Tecnología</th>
+                    <th>Descripción</th>
+                </tr>
+                <tr>
+                    <td>Enrutamiento</td>
+                    <td>OSPF</td>
+                    <td>Se implementó OSPF entre el router ISR4331 y el switch central Catalyst 9200L.</td>
+                </tr>
+                <tr>
+                    <td>Switch Central</td>
+                    <td>Cisco Catalyst 9200L</td>
+                    <td>El switch soporta OSPF en su imagen base.</td>
+                </tr>
+                <tr>
+                    <td>BGP</td>
+                    <td>No implementado</td>
+                    <td>No fue posible implementar BGP debido a limitaciones de compatibilidad en el switch central.</td>
+                </tr>
+                <tr>
+                    <td>Acceso inalámbrico</td>
+                    <td>WiFi Bridge</td>
+                    <td>Se utilizó un Access Point para conectar clientes remotos.</td>
+                </tr>
+            </table>
+        </section>
 
+        <section id="integrantes">
+            <h2>Integrantes del Proyecto</h2>
+            <table>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Rol</th>
+                </tr>
+                <tr>
+                    <td>Angie Isabel Mora</td>
+                    <td>Administrador de Red</td>
+                </tr>
+                <tr>
+                    <td>Yamell Barrit</td>
+                    <td>Configuración</td>
+                </tr>
+                <tr>
+                    <td>Josue Delgado</td>
+                    <td>Soporte Técnico / Configuración</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="topologia">
+            <h2>3. Topologías de Red</h2>
+            
+            <h3>Topología General de mikro-net</h3>
+            <p>
+                La siguiente imagen muestra la integración de nuestra organización
+                dentro de la infraestructura general de mikro-net.
+            </p>
+            <div class="topologia">
+                <img src="ModeloRedLocal.png" alt="Topología general mikro-net">
+            </div>
+
+            <h3>Topología Específica - Enlace Remoto</h3>
+            <p>
+                La siguiente topología muestra la estructura interna de la organización
+                Enlace Remoto.
+            </p>
+            <div class="topologia">
+                <img src="Modelocapa2.png" alt="Topología específica">
+            </div>
+        </section>
+
+        <section id="direccionamiento">
+            <h2>4. Direccionamiento IP</h2>
+            <table>
                 <tr>
                     <th>Dispositivo</th>
                     <th>Interfaz</th>
                     <th>Dirección IP</th>
                     <th>VLAN</th>
                 </tr>
-
                 <tr>
                     <td>Router Principal</td>
                     <td>ether1</td>
                     <td>10.10.1.1/24</td>
                     <td>20</td>
                 </tr>
-
                 <tr>
                     <td>Bridge WiFi</td>
                     <td>wlan1</td>
                     <td>10.10.1.2</td>
                     <td>20</td>
                 </tr>
-
                 <tr>
                     <td>Router Remoto</td>
                     <td>ether1</td>
                     <td>10.10.2.1/24</td>
                     <td>30</td>
                 </tr>
-
                 <tr>
                     <td>Cliente 1</td>
                     <td>eth0</td>
                     <td>DHCP</td>
                     <td>30</td>
                 </tr>
-
             </table>
-            <section id="switchports">
-
-    <h2>5. Configuración de Puertos - SW-Remoto</h2>
-
-    <p>
-        Los puertos utilizados en el switch remoto corresponden
-        al rango:
-    </p>
-
-    <pre>
-<code>
-GigabitEthernet1/0/2 - GigabitEthernet1/0/6
-</code>
-    </pre>
-
-    <p>
-        Estos puertos fueron destinados para dispositivos internos
-        y conectividad de la infraestructura local.
-    </p>
-
-</section>
-
         </section>
 
-        <!-- CONFIGURACIÓN -->
+        <section id="switchports">
+            <h2>5. Configuración de Puertos - SW-Remoto</h2>
+            <p>Los puertos utilizados en el switch remoto corresponden al rango:</p>
+            <pre><code>GigabitEthernet1/0/2 - GigabitEthernet1/0/6</code></pre>
+            <p>Estos puertos fueron destinados para dispositivos internos y conectividad de la infraestructura local.</p>
+        </section>
+
         <section id="configuracion">
+            <h2>6. Configuración de Red</h2>
 
-            <h2>4. Configuración de Red</h2>
-
-            <h3>Configuración IP Router Principal</h3>
-
-            <pre>
-<code>
-/ip address
-add address=10.10.1.1/24 interface=ether1
-</code>
-            </pre>
+            <h3>Configuración IP Router Principal (MikroTik)</h3>
+            <pre><code>/ip address
+add address=10.10.1.1/24 interface=ether1</code></pre>
 
             <h3>Configuración Bridge Inalámbrico</h3>
+            <pre><code>/interface wireless
+set wlan1 mode=bridge ssid=EnlaceRemoto</code></pre>
 
-            <pre>
-<code>
-/interface wireless
-set wlan1 mode=bridge ssid=EnlaceRemoto
-</code>
-            </pre>
-
-            <h3>Configuración OSPF/BGP</h3>
-
-            <pre>
-<code>
-/routing ospf instance
+            <h3>Configuración OSPF/BGP (MikroTik)</h3>
+            <pre><code>/routing ospf instance
 add name=backbone
 
 /routing bgp connection
-add name=bgp-mikronet remote.address=192.168.1.1
-</code>
-            </pre>
+add name=bgp-mikronet remote.address=192.168.1.1</code></pre>
 
-        </section>
-        <h3>Configuración OSPF</h3>
-
-<pre>
-<code>
-router ospf 1
+            <h3>Configuración OSPF (Cisco Catalyst / ISR)</h3>
+            <pre><code>router ospf 1
  router-id 1.1.1.1
- network 10.10.1.0 0.0.0.255 area 0
-</code>
-</pre>
+ network 10.10.1.0 0.0.0.255 area 0</code></pre>
+            <p>El protocolo OSPF fue implementado tanto en el router ISR4331 como en el switch central Catalyst 9200L.</p>
+        </section>
 
-<p>
-    El protocolo OSPF fue implementado tanto en el router ISR4331
-    como en el switch central Catalyst 9200L.
-</p>
-
-        <!-- FIREWALL -->
         <section id="firewall">
-
-            <h2>5. Configuración Firewall</h2>
-
-            <p>
-                Se implementaron reglas restrictivas para permitir únicamente
-                el tráfico necesario.
-            </p>
-
-            <pre>
-<code>
-/ip firewall filter
+            <h2>7. Configuración Firewall</h2>
+            <p>Se implementaron reglas restrictivas para permitir únicamente el tráfico necesario.</p>
+            <pre><code>/ip firewall filter
 add chain=input protocol=icmp action=accept
 
 /ip firewall filter
 add chain=input connection-state=established action=accept
 
 /ip firewall filter
-add chain=input action=drop
-</code>
-            </pre>
-
+add chain=input action=drop</code></pre>
         </section>
 
-        <!-- DNS -->
         <section id="dns">
-
-            <h2>6. Configuración DNS</h2>
-
-            <p>
-                Se configuró resolución de nombres para todos los dispositivos
-                internos y servicios.
-            </p>
-
-            <pre>
-<code>
-/ip dns
-set servers=8.8.8.8 allow-remote-requests=yes
-</code>
-            </pre>
-
+            <h2>8. Configuración DNS</h2>
+            <p>Se configuró resolución de nombres para todos los dispositivos internos y servicios.</p>
+            <pre><code>/ip dns
+set servers=8.8.8.8 allow-remote-requests=yes</code></pre>
         </section>
 
-        <!-- SERVIDOR WEB -->
         <section id="servidor">
-
-            <h2>7. Servidor Web</h2>
-
-            <p>
-                El servidor web fue configurado utilizando Apache/Nginx
-                para publicar:
-            </p>
-
-            <ul style="margin-left: 30px; margin-top: 15px;">
+            <h2>9. Servidor Web</h2>
+            <p>El servidor web fue configurado utilizando Apache/Nginx para publicar:</p>
+            <ul>
                 <li>Bitácora del proyecto</li>
                 <li>Esquema de red</li>
                 <li>Evidencias de funcionamiento</li>
             </ul>
 
             <h3>Estructura del servidor</h3>
-
-            <pre>
-<code>
-/var/www/html
+            <pre><code>/var/www/html
 │
 ├── index.html
 ├── bitacora.html
 ├── esquema.html
 └── imagenes/
-    └── topologia.png
-</code>
-            </pre>
-
+    └── topologia.png</code></pre>
         </section>
 
-        <!-- EVIDENCIAS -->
-        <section id="evidencias">
-
-            <h2>8. Evidencias</h2>
-
+        <section id="conclusiones">
+            <h2>10. Conclusiones</h2>
             <p>
-                A continuación se colocarán las capturas y pruebas de:
+                La implementación de la organización Enlace Remoto permitió integrar
+                exitosamente dos ubicaciones físicas mediante conectividad inalámbrica
+                y protocolos de enrutamiento dinámico.
             </p>
+            <p style="margin-top: 15px;">
+                Se validó la conectividad entre sedes, el funcionamiento de OSPF,
+                la resolución DNS y la publicación de servicios web dentro de la
+                infraestructura mikro-net.
+            </p>
+        </section>
 
-            <ul style="margin-left: 30px; margin-top: 15px;">
+        <section id="evidencias">
+            <h2>11. Evidencias</h2>
+            <p>A continuación se colocarán las capturas y pruebas de:</p>
+            <ul>
                 <li>Ping entre sedes</li>
                 <li>Conectividad entre VLANs</li>
                 <li>Acceso a servicios web</li>
@@ -472,21 +392,13 @@ set servers=8.8.8.8 allow-remote-requests=yes
                 <li>Resolución DNS</li>
                 <li>Pruebas BGP/OSPF</li>
             </ul>
-
         </section>
 
     </div>
 
     <footer>
-
-        <p>
-            Universidad de Costa Rica - Redes y Comunicaciones de Datos
-        </p>
-
-        <p>
-            Proyecto mikro-net | Organización Enlace Remoto
-        </p>
-
+        <p>Universidad de Costa Rica - Redes y Comunicaciones de Datos</p>
+        <p>Proyecto mikro-net | Organización Enlace Remoto</p>
     </footer>
 
 </body>
